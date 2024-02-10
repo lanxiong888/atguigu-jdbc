@@ -1,15 +1,11 @@
-package com.atguigu.api.transaction;
-
-import com.atguigu.api.druid.JDBCTools;
+package com.atguigu.api.transactionnew;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 public class BankDao {
 
-    public void add(String account,int money)throws Exception{
-        Connection connection = JDBCTools.getConnection();
+    public void add(String account,int money,Connection connection)throws Exception{
         Class.forName("com.mysql.cj.jdbc.Driver");
         String url = "jdbc:mysql://localhost:3306/atguigu";
 //        Connection connection = DriverManager.getConnection(url, "root", "root");
@@ -29,9 +25,7 @@ public class BankDao {
 
     }
 
-    public void sub(String account,int money)throws Exception{
-        Connection connection = JDBCTools.getConnection();
-
+    public void sub(String account,int money,Connection connection)throws Exception{
         Class.forName("com.mysql.cj.jdbc.Driver");
         String url = "jdbc:mysql://localhost:3306/atguigu";
 //        Connection connection = DriverManager.getConnection(url, "root", "root");
