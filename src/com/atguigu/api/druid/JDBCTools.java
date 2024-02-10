@@ -34,7 +34,6 @@ public class JDBCTools {
          return connection;
     }
 
-
     public static void free() throws SQLException {
         Connection connection = tl.get();
         if(connection != null){
